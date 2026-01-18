@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/contants/baseContant.dart';
+import 'package:flutter_project/contants/app_constants.dart';
 import 'package:flutter_project/views/cart/index.dart';
 import 'package:flutter_project/views/category/index.dart';
 import 'package:flutter_project/views/home/index.dart';
@@ -25,12 +25,12 @@ class _MainPageState extends State<MainPage> {
       return BottomNavigationBarItem(
         label: _tabs[index]["name"],
         icon: Image.asset(
-          "$imagePath${_tabs[index]["icon"]}",
+          "${AppConstants.imagePath}${_tabs[index]["icon"]}",
           width: 24,
           height: 24,
         ),
         activeIcon: Image.asset(
-          "$imagePath${_tabs[index]["activeIcon"]}",
+          "${AppConstants.imagePath}${_tabs[index]["activeIcon"]}",
           width: 24,
           height: 24,
         ),
@@ -55,7 +55,6 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Home")),
       body: SafeArea(
         child: IndexedStack(index: _currentIndex, children: _getPages()),
       ),
